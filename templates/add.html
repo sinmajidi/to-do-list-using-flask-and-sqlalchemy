@@ -1,0 +1,19 @@
+{%extends'base.html'%}
+
+{%block content%}
+<form action="/add" method="POST">
+    <div class="main">
+    <p class="sign" align="center">To Do List</p>
+    <form class="form1">
+    <input class="pass"  type="text" align="center" placeholder="subject" name="subject" required>
+    <input class="pass"  type="date" align="center" placeholder="date" name="date" required>
+    <input class="pass"  type="time" align="center" placeholder="time" name="time" required>
+        <textarea class="pass"  type="time" align="center" placeholder="details" name="details" ></textarea>
+        <center>
+        <input  type="submit" class="btn btn-outline-dark" role="button"  value="add">
+                        <a href="/" type="button" class="btn btn-outline-danger">back</a>
+</center>
+    </form>
+    </div>
+</form>
+{%endblock%}

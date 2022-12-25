@@ -1,0 +1,10 @@
+{%if user:%}
+
+<a class="nav-item nav-link active" href="/add">new work </a>
+<a class="nav-item nav-link active" href="/logout">logout </a>
+{%endif%}
+{%if not user:%}
+<a class="nav-item nav-link active" href="/register">register </a>
+         <a class="nav-item nav-link active" href="/login">login </a>
+
+{%endif%}

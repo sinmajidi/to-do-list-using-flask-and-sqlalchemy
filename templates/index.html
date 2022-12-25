@@ -1,0 +1,66 @@
+{%extends'base.html'%}
+
+{%block content%}
+<br>
+<div class="container">
+<div class="grad">
+   {%if user:%}
+    <h3>hello {{user}}</h3>
+    <hr>
+<table class="table">
+  <thead>
+  <tr>
+    <th>موضوع</th>
+    <th>تاریخ</th>
+      <th>زمان</th>
+      <th>زمان ثبت</th>
+  </tr>
+  </thead>
+      {% endif %}
+    <tbody>
+{%for d in subject:%}
+    {%if d.author.username==user:%}
+       <tr>
+        <td>
+                    {{d.subject}}
+        </td>
+        <td>
+                   {{d.date}}
+        </td>
+        <td>
+           {{d.time}}
+        </td>
+        <td>
+           {{d.t}}
+        </td>
+        <td>
+<!--           <a href="/delete" type="button" class="btn btn-outline-info">done</a>-->
+            <a href="{{url_for('delete',post_id=d.id)}}" class="btn btn-outline-danger" style="float: right;">done</a>
+            &nbsp;
+             <a href="{{url_for('show_details',post_id=d.id)}}" class="btn btn-outline-dark" style="float: right;">details</a>
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</tbody>
+</table>
+
+</div>
+
+
+
+{%if user:%}
+    <br><br>
+    <a href="/logout" type="button" class="btn btn-outline-danger">logout</a>
+    <a href="/add" type="button" class="btn btn-outline-dark">add a reminder</a>
+    {%else:%}
+    <center>
+    <br><br>
+        <img src="./static/logo.png" style="height: 75%;width: 50%;">
+           <a class="btn btn-dark" href="/login" role="button">login</a>
+       <a class="btn btn-dark" href="/register" role="button">Register</a>
+
+    {%endif%}
+</center>
+    </div>
+{%endblock%}

@@ -1,0 +1,22 @@
+
+{%extends'base.html'%}
+
+{%block content%}
+<form action="/Register" method="POST">
+  <div class="main">
+    <p class="sign" align="center">Register</p>
+    <form class="form1" action="signup" method="post">
+      <input class="un " type="text" align="center" placeholder="Username" name="user" required>
+      <input class="pass" type="password" align="center" placeholder="Password" name="pas" required>
+      <input class="pass" type="password" align="center" placeholder="Password2" name="pass" required>
+      <center>
+        <input class="btn btn-dark" value="Register" type="submit">
+       <a class="btn btn-dark"  href="/login">log in</a>
+          </center>
+    </form>
+  </div>
+
+
+</form>
+{%endblock%}
+
